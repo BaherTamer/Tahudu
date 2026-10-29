@@ -79,15 +79,9 @@ extension SearchScreen {
         LazyVStack {
             ForEach(
                 viewModel.listings,
-                content: listingCard
+                content: ListingCardView<ViewModel>.init
             )
         }
         .padding(.horizontal)
-        .padding(.bottom)
-    }
-    
-    @ViewBuilder
-    private func listingCard(_ listing: Listing) -> some View {
-        
     }
 }
