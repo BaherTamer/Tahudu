@@ -5,7 +5,7 @@
 //  Created by Baher Tamer on 29/10/2026.
 //
 
-public enum NetworkError: Error, Equatable {
+public enum NetworkError: Error {
     /// The endpoint could not be turned into a valid `URL`.
     case invalidURL
 
