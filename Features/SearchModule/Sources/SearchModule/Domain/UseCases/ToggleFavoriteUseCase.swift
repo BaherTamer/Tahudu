@@ -6,6 +6,7 @@
 //
 
 protocol ToggleFavoriteUseCase {
+    /// Returns the new state.
     func execute(id: String) -> Bool
 }
 
