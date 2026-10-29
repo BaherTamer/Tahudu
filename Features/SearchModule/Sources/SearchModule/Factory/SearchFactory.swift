@@ -22,7 +22,9 @@ extension SearchFactory {
     @MainActor
     private static func makeViewModel() -> SearchViewModelImp {
         let networkService = NetworkFactory.networkService
-        return SearchViewModelImp()
+        return SearchViewModelImp(
+            getListingsUseCase: makeGetListingsUseCase(networkService: networkService)
+        )
     }
 }
 

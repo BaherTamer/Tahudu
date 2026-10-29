@@ -11,12 +11,12 @@ import Foundation
 public protocol ViewModel: ObservableObject {
     var state: ViewState { get }
 
-    func onInit()
+    func onInit() async
     func onRefresh() async
-    func onRetry()
+    func onRetry() async
 }
 
 extension ViewModel {
     public func onRefresh() async {}
-    public func onRetry() {}
+    public func onRetry() async {}
 }
