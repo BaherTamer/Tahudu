@@ -30,12 +30,18 @@ final class SearchViewModelImp: SearchViewModel {
     
     // MARK: - Dependencies
     private let getListingsUseCase: GetListingsUseCase
+    private let getFavoritesUseCase: GetFavoritesUseCase
+    private let toggleFavoriteUseCase: ToggleFavoriteUseCase
 
     // MARK: - Life Cycle
     init(
-        getListingsUseCase: GetListingsUseCase
+        getListingsUseCase: GetListingsUseCase,
+        getFavoritesUseCase: GetFavoritesUseCase,
+        toggleFavoriteUseCase: ToggleFavoriteUseCase,
     ) {
         self.getListingsUseCase = getListingsUseCase
+        self.getFavoritesUseCase = getFavoritesUseCase
+        self.toggleFavoriteUseCase = toggleFavoriteUseCase
     }
 }
 
