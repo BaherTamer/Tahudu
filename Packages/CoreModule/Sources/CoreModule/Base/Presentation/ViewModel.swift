@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 @MainActor
 public protocol ViewModel: ObservableObject {
-    var state: ViewState { get }
+    var state: ViewState { get set }
 
     func onInit()
     func onRefresh() async
@@ -19,4 +20,16 @@ public protocol ViewModel: ObservableObject {
 extension ViewModel {
     public func onRefresh() async {}
     public func onRetry() {}
+}
+
+public extension ViewModel {
+    func updateState(_ state: ViewState) {
+        withAnimation {
+            self.state = state
+        }
+    }
+    
+    func updateWithAnimation<Result>(_ body: () throws -> Result) rethrows -> Result {
+        try withAnimation(.default, body)
+    }
 }

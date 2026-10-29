@@ -26,7 +26,7 @@ protocol SearchViewModel: ViewModel {
 final class SearchViewModelImp: SearchViewModel {
     // MARK: - States
     @Published var searchText = ""
-    @Published private(set) var state: ViewState = .initial
+    @Published var state: ViewState = .initial
     @Published private(set) var isFavoritesFilterOn = false
     @Published private var favoriteIDs: Set<String> = []
     @Published private var allListings: [Listing] = []
@@ -91,15 +91,19 @@ extension SearchViewModelImp {
     }
     
     func didTapFavorite(id: String) {
-        if toggleFavoriteUseCase.execute(id: id) {
-            favoriteIDs.insert(id)
-        } else {
-            favoriteIDs.remove(id)
+        updateWithAnimation {
+            if toggleFavoriteUseCase.execute(id: id) {
+                favoriteIDs.insert(id)
+            } else {
+                favoriteIDs.remove(id)
+            }
         }
     }
     
     func didTapFavoritesFilter() {
-        isFavoritesFilterOn.toggle()
+        updateWithAnimation {
+            isFavoritesFilterOn.toggle()
+        }
     }
     
     func didTapContact(_ type: ContactType, id: String) {
@@ -111,15 +115,15 @@ extension SearchViewModelImp {
 extension SearchViewModelImp {
     private func getListings(showsLoading: Bool) async {
         if showsLoading {
-            state = .loading
+            updateState(.loading)
         }
         do {
             allListings = try await getListingsUseCase.execute()
-            state = listings.isEmpty ? .empty : .loaded
+            updateState(listings.isEmpty ? .empty : .loaded)
         } catch let error as SearchError {
-            state = .error(error.message)
+            updateState(.error(error.message))
         } catch {
-            state = .error(SearchError.serviceUnavailable.message)
+            updateState(.error(SearchError.serviceUnavailable.message))
         }
     }
 }
