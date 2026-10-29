@@ -37,8 +37,9 @@ extension SearchScreen {
     private func stateView() -> some View {
         switch viewModel.state {
         case .initial:
-            Color.clear
-                .onAppear(perform: viewModel.onInit)
+            initialView
+        case .loaded where viewModel.listings.isEmpty:
+            favoritesEmptyView
         case .loading, .loaded:
             contentView(isLoading: viewModel.state == .loading)
         case .empty:
@@ -48,8 +49,9 @@ extension SearchScreen {
         }
     }
 
-    private var loadingView: some View {
-        ProgressView()
+    private var initialView: some View {
+        Color.clear
+            .onAppear(perform: viewModel.onInit)
     }
 
     private var emptyView: some View {
@@ -57,6 +59,16 @@ extension SearchScreen {
             systemImage: "house",
             title: "No listings yet",
             message: "Pull down to check again."
+        )
+    }
+
+    private var favoritesEmptyView: some View {
+        StateScreen(
+            systemImage: "heart",
+            title: "No favourites yet",
+            message: "Tap the heart on a listing to save it here.",
+            actionTitle: "Show all listings",
+            action: viewModel.didTapFavoritesFilter
         )
     }
 
