@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6EF9EAD830934ECC001C05EE /* SearchModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9EAD730934ECC001C05EE /* SearchModule */; };
+		6EF9EB263093762C001C05EE /* SettingsModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9EB253093762C001C05EE /* SettingsModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SearchModule,
+				SettingsModule,
 			);
 			target = 1F479BA126EF162000F863AC /* Tahudu */;
 		};
@@ -55,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EF9EAD830934ECC001C05EE /* SearchModule in Frameworks */,
+				6EF9EB263093762C001C05EE /* SettingsModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +113,7 @@
 			name = Tahudu;
 			packageProductDependencies = (
 				6EF9EAD730934ECC001C05EE /* SearchModule */,
+				6EF9EB253093762C001C05EE /* SettingsModule */,
 			);
 			productName = Tahudu;
 			productReference = 1F479BA226EF162000F863AC /* Tahudu.app */;
@@ -166,6 +170,7 @@
 			mainGroup = 1F479B9926EF162000F863AC;
 			packageReferences = (
 				6EF9EAD630934ECC001C05EE /* XCLocalSwiftPackageReference "Features/SearchModule" */,
+				6EF9EB243093762C001C05EE /* XCLocalSwiftPackageReference "Features/SettingsModule" */,
 			);
 			productRefGroup = 1F479BA326EF162000F863AC /* Products */;
 			projectDirPath = "";
@@ -495,12 +500,20 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Features/SearchModule;
 		};
+		6EF9EB243093762C001C05EE /* XCLocalSwiftPackageReference "Features/SettingsModule" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Features/SettingsModule;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		6EF9EAD730934ECC001C05EE /* SearchModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SearchModule;
+		};
+		6EF9EB253093762C001C05EE /* SettingsModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingsModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
