@@ -18,6 +18,7 @@ struct ListingCardView<ViewModel: SearchViewModel>: View {
     var body: some View {
         VStack(alignment: .leading) {
             mediaCarousel
+            detailsView
         }
         .background(Color(.systemBackground))
         .roundedBorder(radius: 8)
@@ -39,5 +40,10 @@ extension ListingCardView {
     private func tagsView() -> some View {
         TagsView(tags: listing.tags)
             .padding(12)
+    }
+    
+    private var detailsView: some View {
+        ListingDetailsView(listing: listing)
+            .padding(16)
     }
 }
