@@ -18,9 +18,9 @@ struct SearchScreen<ViewModel: SearchViewModel>: View {
 
     // MARK: - Body
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            stateView
-        }
+        ScrollView(
+            content: stateView
+        )
         .safeAreaInset(
             edge: .top,
             spacing: .zero,
@@ -34,15 +34,13 @@ struct SearchScreen<ViewModel: SearchViewModel>: View {
 // MARK: - State Views
 extension SearchScreen {
     @ViewBuilder
-    private var stateView: some View {
+    private func stateView() -> some View {
         switch viewModel.state {
         case .initial:
             Color.clear
                 .onAppear(perform: viewModel.onInit)
-        case .loading:
-            loadingView
-        case .loaded:
-            contentView
+        case .loading, .loaded:
+            contentView(isLoading: viewModel.state == .loading)
         case .empty:
             emptyView
         case .error(let message):
@@ -75,13 +73,14 @@ extension SearchScreen {
 
 // MARK: - Components
 extension SearchScreen {
-    private var contentView: some View {
+    private func contentView(isLoading: Bool) -> some View {
         LazyVStack {
             ForEach(
-                viewModel.listings,
+                isLoading ? viewModel.placeholders : viewModel.listings,
                 content: ListingCardView<ViewModel>.init
             )
         }
         .padding(.horizontal)
+        .shimmering(isLoading)
     }
 }

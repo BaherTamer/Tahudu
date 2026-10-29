@@ -11,6 +11,7 @@ import Foundation
 protocol SearchViewModel: ViewModel {
     var searchText: String { get set }
     var listings: [Listing] { get }
+    var placeholders: [Listing] { get }
     
     func didTapFilters()
     func didTapSort()
@@ -23,6 +24,9 @@ final class SearchViewModelImp: SearchViewModel {
     @Published var searchText = ""
     @Published private(set) var state: ViewState = .initial
     @Published private(set) var listings: [Listing] = []
+    
+    // MARK: - Variables
+    let placeholders = Listing.dummyList
     
     // MARK: - Dependencies
     private let getListingsUseCase: GetListingsUseCase
