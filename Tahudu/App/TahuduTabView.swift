@@ -4,6 +4,7 @@
 //
 
 import SearchModule
+import SettingsModule
 import SwiftUI
 
 struct TahuduTabView: View {
@@ -17,7 +18,8 @@ struct TahuduTabView: View {
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-            SettingsView()
+            
+            SettingsFactory.makeScreen()
                 .tint(Color.accent)
                 .tag(Tabs.settings.rawValue)
                 .tabItem {
