@@ -25,7 +25,7 @@ struct StateScreen: View {
         }
         .multilineTextAlignment(.center)
         .padding()
-        .padding(.top)
+        .padding(.top, 32)
     }
 }
 
