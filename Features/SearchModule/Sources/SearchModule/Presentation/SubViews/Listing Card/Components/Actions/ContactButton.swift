@@ -4,6 +4,7 @@
 //
 
 import CoreModule
+import DesignModule
 import SwiftUI
 
 struct ContactButtonStyle: ButtonStyle {
@@ -39,7 +40,11 @@ struct ContactButton: View {
 
     var body: some View {
         Button(action: self.action) {
-            Image(imageSystemName: type.imageSystemNameFilled, imageName: type.imageNameFilled)
+            Image(
+                imageSystemName: type.imageSystemNameFilled,
+                imageName: type.imageNameFilled,
+                bundle: .designModule
+            )
         }
         .buttonStyle(ContactButtonStyle(type: self.type))
     }

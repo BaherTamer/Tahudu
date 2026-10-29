@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum NetworkFactory {
-    static let networkService: NetworkService = RESTNetworkService(
+public enum NetworkFactory {
+    public static let networkService: NetworkService = RESTNetworkService(
         baseDomain: baseDomain,
         session: URLSession.shared
     )

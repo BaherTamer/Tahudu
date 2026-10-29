@@ -9,7 +9,8 @@ import Foundation
 
 extension Data {
     public func decode<T: Decodable>(_ type: T.Type) throws -> T {
-        let jsonDecoder = JSONDecoder()
-        return try jsonDecoder.decode(T.self, from: self)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(T.self, from: self)
     }
 }

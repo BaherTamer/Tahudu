@@ -7,10 +7,10 @@ import DesignModule
 import SwiftUI
 
 /// Represents the various contact types
-enum ContactType {
+enum ContactType: String {
     case phone
     case email
-    case whatsApp
+    case whatsApp = "whatsapp"
     case sms
 
     var imageName: String? {
