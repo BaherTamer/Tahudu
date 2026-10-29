@@ -18,6 +18,70 @@ struct SearchScreen<ViewModel: SearchViewModel>: View {
 
     // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(showsIndicators: false) {
+            stateView
+        }
+        .refreshable(action: viewModel.onRefresh)
+    }
+}
+
+// MARK: - State Views
+extension SearchScreen {
+    @ViewBuilder
+    private var stateView: some View {
+        switch viewModel.state {
+        case .initial:
+            Color.clear
+                .onAppear(perform: viewModel.onInit)
+        case .loading:
+            loadingView
+        case .loaded:
+            contentView
+        case .empty:
+            emptyView
+        case .error(let message):
+            errorView(message: message)
+        }
+    }
+
+    private var loadingView: some View {
+        ProgressView()
+    }
+
+    private var emptyView: some View {
+        StateScreen(
+            systemImage: "house",
+            title: "No listings yet",
+            message: "Pull down to check again."
+        )
+    }
+
+    private func errorView(message: String) -> some View {
+        StateScreen(
+            systemImage: "exclamationmark.triangle",
+            title: "Something went wrong",
+            message: message,
+            actionTitle: "Try again",
+            action: viewModel.onRetry
+        )
+    }
+}
+
+// MARK: - Components
+extension SearchScreen {
+    private var contentView: some View {
+        LazyVStack {
+            ForEach(
+                viewModel.listings,
+                content: listingCard
+            )
+        }
+        .padding(.horizontal)
+        .padding(.bottom)
+    }
+    
+    @ViewBuilder
+    private func listingCard(_ listing: Listing) -> some View {
+        
     }
 }

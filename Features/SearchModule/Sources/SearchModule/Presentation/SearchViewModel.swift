@@ -32,17 +32,21 @@ final class SearchViewModelImp: SearchViewModel {
 
 // MARK: - Base Functions
 extension SearchViewModelImp {
-    func onInit() async {
+    func onInit() {
         guard state == .initial else { return }
-        await getListings(showsLoading: true)
+        Task { [weak self] in
+            await self?.getListings(showsLoading: true)
+        }
     }
 
     func onRefresh() async {
         await getListings(showsLoading: false)
     }
 
-    func onRetry() async {
-        await getListings(showsLoading: true)
+    func onRetry() {
+        Task { [weak self] in
+            await self?.getListings(showsLoading: true)
+        }
     }
 }
 
