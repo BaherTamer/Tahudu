@@ -30,5 +30,14 @@ extension ListingCardView {
         MediaCarouselView(
             media: listing.imageNames
         )
+        .overlay(
+            alignment: .topLeading,
+            content: tagsView
+        )
+    }
+    
+    private func tagsView() -> some View {
+        TagsView(tags: listing.tags)
+            .padding(12)
     }
 }
