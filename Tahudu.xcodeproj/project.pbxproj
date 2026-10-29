@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E86A30933D0A001C05EE /* CoreModule */; };
-		6EF9E8FE30934096001C05EE /* DesignModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E8FD30934096001C05EE /* DesignModule */; };
-		6EF9EA5630934366001C05EE /* NetworkModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9EA5530934366001C05EE /* NetworkModule */; };
+		6EF9EAD830934ECC001C05EE /* SearchModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9EAD730934ECC001C05EE /* SearchModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +33,20 @@
 			);
 			target = 1F479BA126EF162000F863AC /* Tahudu */;
 		};
+		6EF9EAD530934C63001C05EE /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SearchModule,
+			);
+			target = 1F479BA126EF162000F863AC /* Tahudu */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6EF9E77430932806001C05EE /* TahuduTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TahuduTests; sourceTree = "<group>"; };
 		6EF9E78C30932809001C05EE /* Tahudu */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6EF9EA5A309344BD001C05EE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tahudu; sourceTree = "<group>"; };
 		6EF9E86630933CA4001C05EE /* Packages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Packages; sourceTree = "<group>"; };
+		6EF9EAD330934C47001C05EE /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (6EF9EAD530934C63001C05EE /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EF9E8FE30934096001C05EE /* DesignModule in Frameworks */,
-				6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */,
-				6EF9EA5630934366001C05EE /* NetworkModule in Frameworks */,
+				6EF9EAD830934ECC001C05EE /* SearchModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF9E86630933CA4001C05EE /* Packages */,
+				6EF9EAD330934C47001C05EE /* Features */,
 				6EF9E78C30932809001C05EE /* Tahudu */,
 				6EF9E77430932806001C05EE /* TahuduTests */,
 				1F479BA326EF162000F863AC /* Products */,
@@ -100,12 +105,11 @@
 			);
 			fileSystemSynchronizedGroups = (
 				6EF9E78C30932809001C05EE /* Tahudu */,
+				6EF9EAD330934C47001C05EE /* Features */,
 			);
 			name = Tahudu;
 			packageProductDependencies = (
-				6EF9E86A30933D0A001C05EE /* CoreModule */,
-				6EF9E8FD30934096001C05EE /* DesignModule */,
-				6EF9EA5530934366001C05EE /* NetworkModule */,
+				6EF9EAD730934ECC001C05EE /* SearchModule */,
 			);
 			productName = Tahudu;
 			productReference = 1F479BA226EF162000F863AC /* Tahudu.app */;
@@ -161,9 +165,7 @@
 			);
 			mainGroup = 1F479B9926EF162000F863AC;
 			packageReferences = (
-				6EF9E86830933CF8001C05EE /* XCLocalSwiftPackageReference "Packages/CoreModule" */,
-				6EF9E8FC30934096001C05EE /* XCLocalSwiftPackageReference "Packages/DesignModule" */,
-				6EF9EA5430934366001C05EE /* XCLocalSwiftPackageReference "Packages/NetworkModule" */,
+				6EF9EAD630934ECC001C05EE /* XCLocalSwiftPackageReference "Features/SearchModule" */,
 			);
 			productRefGroup = 1F479BA326EF162000F863AC /* Products */;
 			projectDirPath = "";
@@ -489,32 +491,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		6EF9E86830933CF8001C05EE /* XCLocalSwiftPackageReference "Packages/CoreModule" */ = {
+		6EF9EAD630934ECC001C05EE /* XCLocalSwiftPackageReference "Features/SearchModule" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/CoreModule;
-		};
-		6EF9E8FC30934096001C05EE /* XCLocalSwiftPackageReference "Packages/DesignModule" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/DesignModule;
-		};
-		6EF9EA5430934366001C05EE /* XCLocalSwiftPackageReference "Packages/NetworkModule" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/NetworkModule;
+			relativePath = Features/SearchModule;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6EF9E86A30933D0A001C05EE /* CoreModule */ = {
+		6EF9EAD730934ECC001C05EE /* SearchModule */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CoreModule;
-		};
-		6EF9E8FD30934096001C05EE /* DesignModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DesignModule;
-		};
-		6EF9EA5530934366001C05EE /* NetworkModule */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = NetworkModule;
+			productName = SearchModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

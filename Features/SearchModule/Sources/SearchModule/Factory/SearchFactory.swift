@@ -6,9 +6,24 @@
 //
 
 import NetworkModule
+import SwiftUI
 
 public enum SearchFactory {
-    
+    @MainActor
+    public static func makeScreen() -> some View {
+        SearchScreen(
+            viewModel: makeViewModel()
+        )
+    }
+}
+
+// MARK: - ViewModels
+extension SearchFactory {
+    @MainActor
+    private static func makeViewModel() -> SearchViewModelImp {
+        let networkService = NetworkFactory.networkService
+        return SearchViewModelImp()
+    }
 }
 
 // MARK: - UseCases

@@ -3,6 +3,7 @@
 //  Tahudu
 //
 
+import SearchModule
 import SwiftUI
 
 struct TahuduTabView: View {
@@ -10,7 +11,7 @@ struct TahuduTabView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            SearchView()
+            SearchFactory.makeScreen()
                 .tag(Tabs.search.rawValue)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
