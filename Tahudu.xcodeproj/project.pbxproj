@@ -6,6 +6,10 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E86A30933D0A001C05EE /* CoreModule */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1F479BB326EF162400F863AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6EF9E77430932806001C05EE /* TahuduTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = TahuduTests; sourceTree = "<group>"; };
 		6EF9E78C30932809001C05EE /* Tahudu */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Tahudu; sourceTree = "<group>"; };
+		6EF9E86630933CA4001C05EE /* Packages */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Packages; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +53,7 @@
 		1F479B9926EF162000F863AC = {
 			isa = PBXGroup;
 			children = (
+				6EF9E86630933CA4001C05EE /* Packages */,
 				6EF9E78C30932809001C05EE /* Tahudu */,
 				6EF9E77430932806001C05EE /* TahuduTests */,
 				1F479BA326EF162000F863AC /* Products */,
@@ -81,6 +88,9 @@
 				6EF9E78C30932809001C05EE /* Tahudu */,
 			);
 			name = Tahudu;
+			packageProductDependencies = (
+				6EF9E86A30933D0A001C05EE /* CoreModule */,
+			);
 			productName = Tahudu;
 			productReference = 1F479BA226EF162000F863AC /* Tahudu.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 1F479B9926EF162000F863AC;
+			packageReferences = (
+				6EF9E86830933CF8001C05EE /* XCLocalSwiftPackageReference "Packages/CoreModule" */,
+			);
 			productRefGroup = 1F479BA326EF162000F863AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,6 +457,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		6EF9E86830933CF8001C05EE /* XCLocalSwiftPackageReference "Packages/CoreModule" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/CoreModule;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6EF9E86A30933D0A001C05EE /* CoreModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F479B9A26EF162000F863AC /* Project object */;
 }
