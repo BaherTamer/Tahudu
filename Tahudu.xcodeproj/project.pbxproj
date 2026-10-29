@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E86A30933D0A001C05EE /* CoreModule */; };
 		6EF9E8FE30934096001C05EE /* DesignModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E8FD30934096001C05EE /* DesignModule */; };
+		6EF9EA5630934366001C05EE /* NetworkModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9EA5530934366001C05EE /* NetworkModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 			files = (
 				6EF9E8FE30934096001C05EE /* DesignModule in Frameworks */,
 				6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */,
+				6EF9EA5630934366001C05EE /* NetworkModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +95,7 @@
 			packageProductDependencies = (
 				6EF9E86A30933D0A001C05EE /* CoreModule */,
 				6EF9E8FD30934096001C05EE /* DesignModule */,
+				6EF9EA5530934366001C05EE /* NetworkModule */,
 			);
 			productName = Tahudu;
 			productReference = 1F479BA226EF162000F863AC /* Tahudu.app */;
@@ -150,6 +153,7 @@
 			packageReferences = (
 				6EF9E86830933CF8001C05EE /* XCLocalSwiftPackageReference "Packages/CoreModule" */,
 				6EF9E8FC30934096001C05EE /* XCLocalSwiftPackageReference "Packages/DesignModule" */,
+				6EF9EA5430934366001C05EE /* XCLocalSwiftPackageReference "Packages/NetworkModule" */,
 			);
 			productRefGroup = 1F479BA326EF162000F863AC /* Products */;
 			projectDirPath = "";
@@ -469,6 +473,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/DesignModule;
 		};
+		6EF9EA5430934366001C05EE /* XCLocalSwiftPackageReference "Packages/NetworkModule" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/NetworkModule;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -479,6 +487,10 @@
 		6EF9E8FD30934096001C05EE /* DesignModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignModule;
+		};
+		6EF9EA5530934366001C05EE /* NetworkModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
