@@ -21,6 +21,12 @@ struct SearchScreen<ViewModel: SearchViewModel>: View {
         ScrollView(showsIndicators: false) {
             stateView
         }
+        .safeAreaInset(
+            edge: .top,
+            spacing: .zero,
+            content: SearchHeaderView<ViewModel>.init
+        )
+        .environmentObject(viewModel)
         .refreshable(action: viewModel.onRefresh)
     }
 }

@@ -11,6 +11,10 @@ import Foundation
 protocol SearchViewModel: ViewModel {
     var searchText: String { get set }
     var listings: [Listing] { get }
+    
+    func didTapFilters()
+    func didTapSort()
+    func didTapSaveSearch()
 }
 
 final class SearchViewModelImp: SearchViewModel {
@@ -47,6 +51,21 @@ extension SearchViewModelImp {
         Task { [weak self] in
             await self?.getListings(showsLoading: true)
         }
+    }
+}
+
+// MARK: - Core Functions
+extension SearchViewModelImp {
+    func didTapFilters() {
+        print("Filters tapped")
+    }
+    
+    func didTapSort() {
+        print("Sort tapped")
+    }
+    
+    func didTapSaveSearch() {
+        print("Save search tapped")
     }
 }
 
