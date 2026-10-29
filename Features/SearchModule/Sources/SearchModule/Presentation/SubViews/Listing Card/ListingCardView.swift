@@ -17,9 +17,18 @@ struct ListingCardView<ViewModel: SearchViewModel>: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
-            
+            mediaCarousel
         }
         .background(Color(.systemBackground))
         .roundedBorder(radius: 8)
+    }
+}
+
+// MARK: - Components
+extension ListingCardView {
+    private var mediaCarousel: some View {
+        MediaCarouselView(
+            media: listing.imageNames
+        )
     }
 }
