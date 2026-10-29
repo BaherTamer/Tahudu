@@ -3,6 +3,7 @@
 //  Tahudu
 //
 
+import CoreModule
 import SwiftUI
 
 struct ContactButtonStyle: ButtonStyle {

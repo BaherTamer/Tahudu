@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E86A30933D0A001C05EE /* CoreModule */; };
+		6EF9E8FE30934096001C05EE /* DesignModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF9E8FD30934096001C05EE /* DesignModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF9E8FE30934096001C05EE /* DesignModule in Frameworks */,
 				6EF9E86B30933D0A001C05EE /* CoreModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +92,7 @@
 			name = Tahudu;
 			packageProductDependencies = (
 				6EF9E86A30933D0A001C05EE /* CoreModule */,
+				6EF9E8FD30934096001C05EE /* DesignModule */,
 			);
 			productName = Tahudu;
 			productReference = 1F479BA226EF162000F863AC /* Tahudu.app */;
@@ -146,6 +149,7 @@
 			mainGroup = 1F479B9926EF162000F863AC;
 			packageReferences = (
 				6EF9E86830933CF8001C05EE /* XCLocalSwiftPackageReference "Packages/CoreModule" */,
+				6EF9E8FC30934096001C05EE /* XCLocalSwiftPackageReference "Packages/DesignModule" */,
 			);
 			productRefGroup = 1F479BA326EF162000F863AC /* Products */;
 			projectDirPath = "";
@@ -328,7 +332,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -356,7 +359,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = Accent;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
@@ -463,12 +465,20 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/CoreModule;
 		};
+		6EF9E8FC30934096001C05EE /* XCLocalSwiftPackageReference "Packages/DesignModule" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/DesignModule;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		6EF9E86A30933D0A001C05EE /* CoreModule */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreModule;
+		};
+		6EF9E8FD30934096001C05EE /* DesignModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignModule;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
