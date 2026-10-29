@@ -79,7 +79,7 @@ extension SearchScreen {
         LazyVStack {
             ForEach(
                 viewModel.listings,
-                content: ListingCardView.init
+                content: ListingCardView<ViewModel>.init
             )
         }
         .padding(.horizontal)

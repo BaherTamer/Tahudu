@@ -15,6 +15,7 @@ protocol SearchViewModel: ViewModel {
     func didTapFilters()
     func didTapSort()
     func didTapSaveSearch()
+    func didTapContact(_ type: ContactType, id: String)
 }
 
 final class SearchViewModelImp: SearchViewModel {
@@ -66,6 +67,10 @@ extension SearchViewModelImp {
     
     func didTapSaveSearch() {
         print("Save search tapped")
+    }
+    
+    func didTapContact(_ type: ContactType, id: String) {
+        print("Contact \(type) tapped for listing \(id)")
     }
 }
 

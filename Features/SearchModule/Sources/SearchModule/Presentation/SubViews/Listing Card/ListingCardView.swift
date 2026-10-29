@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListingCardView: View {
+struct ListingCardView<ViewModel: SearchViewModel>: View {
     // MARK: - Inputs
     let listing: Listing
     
@@ -17,6 +17,7 @@ struct ListingCardView: View {
             mediaCarousel
             detailsView
             Divider()
+            actionsView
             lastContactedView
         }
         .background(Color(.systemBackground))
@@ -44,6 +45,15 @@ extension ListingCardView {
     private var detailsView: some View {
         ListingDetailsView(listing: listing)
             .padding(16)
+    }
+    
+    private var actionsView: some View {
+        ListingActionsView<ViewModel>(
+            listingId: listing.id,
+            published: listing.publishedAt,
+            contactOptions: listing.contactOptions
+        )
+        .padding()
     }
     
     @ViewBuilder

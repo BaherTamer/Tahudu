@@ -19,6 +19,7 @@ extension UIColor {
 
 extension Color {
     // Due to the "Global Accent Color Name" setting, AccentColor can already be found under Color.accentColor
+    public static let accent = Color(.accent)
     public static let brand = Color(.brand)
 
     // MARK: Social Media

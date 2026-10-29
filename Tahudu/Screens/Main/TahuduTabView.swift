@@ -12,17 +12,20 @@ struct TahuduTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             SearchFactory.makeScreen()
+                .tint(Color.accent)
                 .tag(Tabs.search.rawValue)
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
             SettingsView()
+                .tint(Color.accent)
                 .tag(Tabs.settings.rawValue)
                 .tabItem {
                     Label("My Account", systemImage: selectedTab == Tabs.settings.rawValue ? "person.fill" : "person")
                 }
                 .edgesIgnoringSafeArea(.all)
         }
+        .tint(Color.brand)
     }
 }
 
