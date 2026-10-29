@@ -3,6 +3,7 @@
 //  Tahudu
 //
 
+import DesignModule
 import SwiftUI
 
 /// Represents the various contact types
