@@ -30,7 +30,7 @@ extension SearchHeaderView {
             filtersButton
             sortButton
             Spacer()
-            saveButton
+            favoriteButton
         }
     }
     
@@ -65,10 +65,10 @@ extension SearchHeaderView {
         )
     }
     
-    private var saveButton: some View {
+    private var favoriteButton: some View {
         SearchHeaderButton(
-            systemName: "star",
-            action: viewModel.didTapSaveSearch
+            systemName: viewModel.isFavoritesFilterOn ? "star.fill" : "star",
+            action: viewModel.didTapFavoritesFilter
         )
     }
 }

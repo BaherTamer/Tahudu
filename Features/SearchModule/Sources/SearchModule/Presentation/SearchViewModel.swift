@@ -18,7 +18,6 @@ protocol SearchViewModel: ViewModel {
     
     func didTapFilters()
     func didTapSort()
-    func didTapSaveSearch()
     func didTapFavorite(id: String)
     func didTapFavoritesFilter()
     func didTapContact(_ type: ContactType, id: String)
@@ -89,10 +88,6 @@ extension SearchViewModelImp {
     
     func didTapSort() {
         print("Sort tapped")
-    }
-    
-    func didTapSaveSearch() {
-        print("Save search tapped")
     }
     
     func didTapFavorite(id: String) {
