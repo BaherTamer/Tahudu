@@ -22,8 +22,11 @@ extension SearchFactory {
     @MainActor
     private static func makeViewModel() -> SearchViewModelImp {
         let networkService = NetworkFactory.networkService
+        let favoritesRepository = makeFavoritesRepository()
         return SearchViewModelImp(
-            getListingsUseCase: makeGetListingsUseCase(networkService: networkService)
+            getListingsUseCase: makeGetListingsUseCase(networkService: networkService),
+            getFavoritesUseCase: makeGetFavoritesUseCase(repository: favoritesRepository),
+            toggleFavoriteUseCase: makeToggleFavoriteUseCase(repository: favoritesRepository)
         )
     }
 }
@@ -37,6 +40,18 @@ extension SearchFactory {
             repository: makeListingsRepository(networkService: networkService)
         )
     }
+    
+    private static func makeGetFavoritesUseCase(
+        repository: FavoritesRepository
+    ) -> GetFavoritesUseCase {
+        GetFavoritesUseCaseImp(repository: repository)
+    }
+
+    private static func makeToggleFavoriteUseCase(
+        repository: FavoritesRepository
+    ) -> ToggleFavoriteUseCase {
+        ToggleFavoriteUseCaseImp(repository: repository)
+    }
 }
 
 // MARK: - Repositories
@@ -47,5 +62,9 @@ extension SearchFactory {
         ListingsRepositoryImp(
             networkService: networkService
         )
+    }
+    
+    private static func makeFavoritesRepository() -> FavoritesRepository {
+        FavoritesRepositoryImp()
     }
 }

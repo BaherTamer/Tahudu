@@ -35,10 +35,19 @@ extension ListingCardView {
             alignment: .topLeading,
             content: tagsView
         )
+        .overlay(
+            alignment: .topTrailing,
+            content: favoriteButton
+        )
     }
     
     private func tagsView() -> some View {
         TagsView(tags: listing.tags)
+            .padding(12)
+    }
+    
+    private func favoriteButton() -> some View {
+        FavoriteButton<ViewModel>(listingId: listing.id)
             .padding(12)
     }
     
