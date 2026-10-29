@@ -7,18 +7,17 @@
 
 import SwiftUI
 
-struct ListingCardView<ViewModel: SearchViewModel>: View {
+struct ListingCardView: View {
     // MARK: - Inputs
     let listing: Listing
-    
-    // MARK: - Environments
-    @EnvironmentObject private var viewModel: ViewModel
     
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
             mediaCarousel
             detailsView
+            Divider()
+            lastContactedView
         }
         .background(Color(.systemBackground))
         .roundedBorder(radius: 8)
@@ -45,5 +44,12 @@ extension ListingCardView {
     private var detailsView: some View {
         ListingDetailsView(listing: listing)
             .padding(16)
+    }
+    
+    @ViewBuilder
+    private var lastContactedView: some View {
+        if let lastContacted = listing.lastContactedAt {
+            LastContactedView(date: lastContacted)
+        }
     }
 }
